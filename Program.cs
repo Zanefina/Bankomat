@@ -1,17 +1,17 @@
 ﻿using System;
 
 namespace Bankomat
-{
+{                                   
     class Program
-    {
+    {             
         public static void Main(string[] args)
         {   //users array,money they have in theirs bank account and bank accounts arrays.
             string[,] users = new string[,] { { "Sara", "1234" }, { "Johan", "1233" }, { "Maria", "1333" }, { "Sannie", "3333" }, { "Nils", "3331" } };
-            decimal[,] money = new decimal[,] { { 13987.12m, 900.00m, 0m }, { 20000.00m, 1000.00m, 500.00m }, { 2500.00m, 0m, 1500.00m }, { 3400.00m, 1045.00m, 0m }, { 1500.00m, 1235.00m, 0m } };
+            decimal[,] money = new decimal[,] { { 13987.12m, 900.00m, 120.00m }, { 20000.00m, 1000.00m, 500.00m }, { 2500.00m, 500.00m, 1500.00m }, { 3400.00m, 1045.00m, 345.89m }, { 1500.00m, 1235.00m, 35.89m } };
             string[] bankAccount = new string[3];
             bankAccount[0] = "Lönekonto";
             bankAccount[1] = "Sparkonto";
-            bankAccount[2] = "Privatkonto";
+            bankAccount[2] = "Privatkonto";   
             Welcome(users, money, bankAccount); //welcome method.
 
         }
@@ -165,10 +165,7 @@ namespace Bankomat
                     {                          //condition to send the money to the account that user choosed.
                         finalAmount = money[index, j] + sum;
                         Console.WriteLine($"Du har {finalAmount}kr på ditt {bankAccount[i]}");
-                       
                     }
-
-
                 }
                 
             }
@@ -209,7 +206,7 @@ namespace Bankomat
                 if (users[i, 1].Contains(pasword)) //if the user's pasword array contains the pasword that user wrote and
                                                    // the money that the user has withdrawn from the account he has chosen will be seen
                 {
-                    Console.WriteLine($"Du har {difference}kr på ditt:{bankAccount[i]}");
+                    Console.WriteLine($"Du har {difference}kr på ditt {bankAccount[i]}");
                     break;
                 }
                 else
